@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Calculator</title>
+    <link rel="stylesheet" href="cssRestet.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./assets/icon-192.png">
+    <link rel="manifest" href="./manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js');
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img class="card-image" src="./assets/aplieciba-front-blured.jpg" alt="aplieciba">
+      </div>
+      <div class="card">
+         <img class="card-image" src="./assets/back-blured.jpg" alt="aplieciba-aizmugure">
+      </div>
+    </div>
+ 
+    <script src="./index.js"></script>
+  </body>
+</html>

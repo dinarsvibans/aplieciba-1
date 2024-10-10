@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure padding and borders are included in dimensions */
+}
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden; /* Prevent unnecessary scrolling */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%; /* Set width to be flexible */
+  max-width: 1200px; /* Max width to prevent it from expanding too much */
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 7 / 5;
+  max-width: 500px; /* Prevent card from growing too large */
+  width: 100%; /* Allow card to take up the available space */
+  height: auto; /* Let height be determined by aspect ratio */
+}
+
+.card-image {
+  width: 100%; /* Image takes up the full width of the card */
+  aspect-ratio: 7 / 5; /* Maintain aspect ratio for images */
+  object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+@media (max-width: 500px) {
+  body {
+    overflow-y: auto; /* Enable vertical scrolling for mobile */
+  }
+
+  .container {
+     /* Stack cards vertically in mobile view */
+    gap: 20px; /* Ensure proper spacing between cards */
+    transform: rotate(90deg); /* Rotate the entire container */
+    transform-origin: center center; /* Keep rotation centered */
+    width: 100vh; /* Make width equal to viewport height after rotation */
+    height: auto; /* Let height be determined by the content */
+  }
+
+  .card {
+    width: 100vh; /* Card takes the rotated full viewport height as its width */
+    height: auto; /* Let the height adjust based on the content */
+    aspect-ratio: unset; /* Remove aspect-ratio to allow flexible resizing */
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto; /* Let the height adjust based on the width */
+  }
+}
